@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #f5f5f5;
+  background-color: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +14,12 @@ body {
 }
 
 .card {
-  width: 360px;
-  height: 210px;
+  width: 810px;
+  height: 472.5px;
+  /* Center the transform origin for better 3D effect */
+  transform-style: preserve-3d;
+  /* Optional: add a little perspective here too for extra effect */
+  /* perspective: 1200px; */
 }
 
 .card-inner {
@@ -23,7 +27,8 @@ body {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 0.6s ease-out;
+  transition: transform 0.6s cubic-bezier(0.4, 2, 0.6, 1);
+  will-change: transform;
 }
 
 .card-face {
@@ -31,16 +36,21 @@ body {
   width: 100%;
   height: 100%;
   border: 1px solid #000;
-  background: #fff;
-  background-image:
-    linear-gradient(45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(0,0,0,0.03) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.03) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.03) 75%);
-  background-size: 4px 4px;
-  background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  background: #f8f6f2;
+  /* Removed all texture images and gradients */
+  background-image: none;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.13);
   backface-visibility: hidden;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: inherit;
 }
 
 .card-back {
@@ -54,40 +64,60 @@ body {
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
-  font-size: 12px;
+  font-size: 21px;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
 }
 
 .top-left, .top-right {
-  font-size: 10px;
+  font-size: 19.5px;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
 }
 
 .bottom {
-  font-size: 10px;
+  font-size: 15px;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
 }
 
 .top-left {
   position: absolute;
-  top: 8px;
-  left: 10px;
+  top: 45px;
+  left: 30px;
   text-align: left;
 }
 
 .top-right {
   position: absolute;
-  top: 8px;
-  right: 10px;
+  top: 37.5px;
+  right: 30px;
   text-align: right;
 }
 
 .company-name {
-  font-size: 8px;
+  font-size: 22.5px;
   font-weight: bold;
   letter-spacing: 1px;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
 }
 
 .tagline {
-  font-size: 10px;
+  font-size: 22.5px;
   letter-spacing: 2px;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
 }
 
 .center {
@@ -99,32 +129,47 @@ body {
 }
 
 .center .first-name {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: normal;
   text-transform: uppercase;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
 }
 
 .center .last-name {
-  font-size: 18px;
+  font-size: 27px;
   letter-spacing: 1px;
   font-weight: bold;
   text-transform: uppercase;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
 }
 
 .title {
   margin-top: 2px;
-  font-size: 12px;
-  font-style: italic;
+  font-size: 18px;
   text-transform: uppercase;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
 }
 
 .bottom {
   position: absolute;
-  bottom: 8px;
+  bottom: 6%;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   width: 90%;
   text-transform: uppercase;
   letter-spacing: 1px;
+  text-shadow:
+    2.5px 2.5px 0 #c8c6bc,
+    1.5px 1.5px 0 #e6e4de,
+    0px 3px 6px #bdbbb3;
 }
